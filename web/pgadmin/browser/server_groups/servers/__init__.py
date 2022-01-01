@@ -731,6 +731,14 @@ class ServerNode(PGChildNodeView):
             'kerberos_conn': 'kerberos_conn',
         }
 
+        if config.SERVER_MODE and server.shared and server.user_id != current_user.id: 
+            config_param_map = {
+                'bgcolor': 'bgcolor',
+                'fgcolor': 'fgcolor',
+                'comment': 'comment',
+            }
+
+        
         disp_lbl = {
             'name': gettext('name'),
             'hostaddr': gettext('Host name/address'),
